@@ -94,7 +94,7 @@ for (roi in 1:length(MT_init_values)){
     a1=((Rw+kw-l2)*Sw0-kw*Sm0)/(l1-l2); #update the amplitudes based on current saturation level
     a2=-((Rw+kw-l1)*Sw0-kw*Sm0)/(l1-l2);
     y1 =a1*exp(-l1*t)+a2*exp(-l2*t); #free MT exchange after saturation
-    Mzbetweentrains[n]<-1-y1[7]; #save the initial Mz for each pulse train
+    Mzbetweentrains[n]<-1-y1[5]; #save the initial Mz for each pulse train
     
     M0_start[3]=tail(1-y1,1); #reinitialize Mz/M0 for new saturation train
     out_lit<-sat_effect(list("FW",M0_start,(1/MT_init_values[[roi]][[5]])*1000,MT_init_values[[roi]][[7]])); #apply new saturation pulse 
